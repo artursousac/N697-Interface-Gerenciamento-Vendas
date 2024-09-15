@@ -194,7 +194,7 @@
     <script>
         async function getLocaisPaginado(inicio, fim) {
             try {
-                const response = await axios.get(`https://n697-api-gerenciamento-vendas.vercel.app//locais?inicio=${inicio}&fim=${fim}`)
+                const response = await axios.get(`https://n697-api-gerenciamento-vendas.vercel.app/locais?inicio=${inicio}&fim=${fim}`)
                 const locais = response.data
                 const tableLocais = document.getElementById('bodyTableLocais')
                 tableLocais.innerHTML = ''
