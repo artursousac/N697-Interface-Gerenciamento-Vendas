@@ -179,7 +179,7 @@
     <script>
         async function gerarPaginacao() {
             try {
-                const response = await axios.get('https://api-gerenciamento-eventos-virid.vercel.app/eventos')
+                const response = await axios.get('https://n697-api-gerenciamento-vendas.vercel.app/eventos')
                 const eventos = response.data
                 const totalEventos = eventos.length
                 const quantidadePagina = Math.ceil(totalEventos / 7)
@@ -210,7 +210,7 @@
     <script>
         async function getEventosPaginado(inicio, fim) {
             try {
-                const response = await axios.get(`https://api-gerenciamento-eventos-virid.vercel.app/eventos?inicio=${inicio}&fim=${fim}`)
+                const response = await axios.get(`https://n697-api-gerenciamento-vendas.vercel.app/eventos?inicio=${inicio}&fim=${fim}`)
                 const eventos = response.data
                 const tableEventos = document.getElementById('bodyTableEventos')
                 tableEventos.innerHTML = ''
@@ -250,7 +250,7 @@
         async function deletarEvento(id) {
             try {
 
-                const response = await axios.delete(`https://api-gerenciamento-eventos-virid.vercel.app/evento/${id}`)
+                const response = await axios.delete(`https://n697-api-gerenciamento-vendas.vercel.app/evento/${id}`)
 
                 if (response.data) {
                     alert("Evento deletado com sucesso!!!")
@@ -267,7 +267,7 @@
         async function editarEvento(id) {
             try {
 
-                const response = await axios.get(`https://api-gerenciamento-eventos-virid.vercel.app/evento/${id}`)
+                const response = await axios.get(`https://n697-api-gerenciamento-vendas.vercel.app/evento/${id}`)
 
                 if (response.data) {
 
@@ -296,7 +296,7 @@
     async function visualizarEvento(id) {
         try {
 
-            const response = await axios.get(`https://api-gerenciamento-eventos-virid.vercel.app/evento/${id}`)
+            const response = await axios.get(`https://n697-api-gerenciamento-vendas.vercel.app/evento/${id}`)
 
             if (response.data) {
 
@@ -320,9 +320,9 @@
                 let organizador = document.getElementById('organizadorInputEditar').value
                 let patrocinador = document.getElementById('patrocinadorInputEditar').value
 
-                const response = await axios.get(`https://api-gerenciamento-eventos-virid.vercel.app/evento/${id}`);
+                const response = await axios.get(`https://n697-api-gerenciamento-vendas.vercel.app/evento/${id}`);
 
-                const response2 = await axios.put(`https://api-gerenciamento-eventos-virid.vercel.app/evento/${id}`, {nome: `${nome}`, data: `${data}`, local: `${local}`, organizador: `${organizador}`, patrocinador: `${patrocinador}`, modifiedAt: `${moment().toISOString()}`, createdAt: `${response.data.createdAt}`, participantes: response.data.participantes})
+                const response2 = await axios.put(`https://n697-api-gerenciamento-vendas.vercel.app/evento/${id}`, {nome: `${nome}`, data: `${data}`, local: `${local}`, organizador: `${organizador}`, patrocinador: `${patrocinador}`, modifiedAt: `${moment().toISOString()}`, createdAt: `${response.data.createdAt}`, participantes: response.data.participantes})
 
                 if (response2.data.message.startsWith("evento atualizado com sucesso")) {
 
