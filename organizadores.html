@@ -165,7 +165,7 @@ https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js
     <script>
         async function gerarPaginacao() {
             try {
-                const response = await axios.get('https://api-gerenciamento-eventos-virid.vercel.app/organizadores')
+                const response = await axios.get('https://n697-api-gerenciamento-vendas.vercel.app/organizadores')
                 const organizadores = response.data
                 const totalOrganizadores = organizadores.length
                 const quantidadePagina = Math.ceil(totalOrganizadores / 7)
@@ -196,7 +196,7 @@ https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js
     <script>
         async function getOrganizadoresPaginado(inicio, fim) {
             try {
-                const response = await axios.get(`https://api-gerenciamento-eventos-virid.vercel.app/organizadores?inicio=${inicio}&fim=${fim}`)
+                const response = await axios.get(`https://n697-api-gerenciamento-vendas.vercel.app/organizadores?inicio=${inicio}&fim=${fim}`)
                 const organizadores = response.data
                 const tableOrganizadores = document.getElementById('bodyTableOrganizadores')
                 tableOrganizadores.innerHTML = ''
@@ -235,7 +235,7 @@ https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js
         async function deletarOrganizador(id) {
             try {
 
-                const response = await axios.delete(`https://api-gerenciamento-eventos-virid.vercel.app/organizador/${id}`)
+                const response = await axios.delete(`https://n697-api-gerenciamento-vendas.vercel.app/organizador/${id}`)
 
                 if (response.data) {
                     alert("Organizador deletado com sucesso!!!")
@@ -252,7 +252,7 @@ https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js
         async function editarOrganizador(id) {
             try {
 
-                const response = await axios.get(`https://api-gerenciamento-eventos-virid.vercel.app/organizador/${id}`)
+                const response = await axios.get(`https://n697-api-gerenciamento-vendas.vercel.app/organizador/${id}`)
 
                 if (response.data) {
 
@@ -281,9 +281,9 @@ https://cdn.jsdelivr.net/npm/moment@2.30.1/moment.min.js
                 let nome = document.getElementById('nomeInputEditar').value
                 let email = document.getElementById('emailInputEditar').value
 
-                const response = await axios.get(`https://api-gerenciamento-eventos-virid.vercel.app/organizador/${id}`);
+                const response = await axios.get(`https://n697-api-gerenciamento-vendas.vercel.app/organizador/${id}`);
 
-                const response2 = await axios.put(`https://api-gerenciamento-eventos-virid.vercel.app/organizador/${id}`, {nome: `${nome}`, email: `${email}`, modifiedAt: `${moment().toISOString()}`, createdAt: `${response.data.createdAt}`})
+                const response2 = await axios.put(`https://n697-api-gerenciamento-vendas.vercel.app/organizador/${id}`, {nome: `${nome}`, email: `${email}`, modifiedAt: `${moment().toISOString()}`, createdAt: `${response.data.createdAt}`})
 
                 if (response2.data.message.startsWith("organizador atualizado com sucesso")) {
 

@@ -126,7 +126,7 @@
                 let nome = document.getElementById('cadastroNome').value;
                 let email = document.getElementById('cadastroEmail').value;
 
-                const response = await axios.post('https://api-gerenciamento-eventos-virid.vercel.app/organizador', { nome, email});
+                const response = await axios.post('https://n697-api-gerenciamento-vendas.vercel.app/organizador', { nome, email});
 
                 if (response.data.message.startsWith("organizador criado com sucesso")) {
                     alert("organizador criado com sucesso!!!")
